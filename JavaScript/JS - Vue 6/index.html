@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Exemplo - Vue.JS</title>
+		<style type="text/css">
+			body {
+				margin-bottom: 15%;
+				margin-left: 2%;
+				margin-right: 2%;
+			}
+			.list {
+				background-color: #faee88;
+				font-family: Courier;
+				font-size: 16px;
+				margin-top: 0.5%;
+				margin-bottom: 0.5%;
+				padding: 8px 2% 8px 2%;
+			}
+			hr {
+				margin-top: 2%;
+				margin-bottom: 2%;
+			}
+			h1, h2, h3 {
+				font-family: Verdana;
+				font-weight: normal;
+			}
+			h1 {
+				font-size: 23px;
+				text-align: center;
+			}
+			h2 {
+				font-size: 19px;
+			}
+			h3 {
+				font-size: 16px;
+			}
+			div {
+				font-family: Courier;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Exemplo VueJS</h1>
+
+			<hr>
+
+			<h2>Lista de Contatos</h2>
+
+			<h3>Separando Objetos</h3>
+			<div class="list" v-for="contact in contacts" :key="contact.id">
+				<div>Id: {{contact.id}}</div>
+				<div>Nome: {{contact.name}}</div>
+				<div>Idade: {{contact.age}}</div>
+			</div>
+
+			<hr>
+
+			<h3>Mostrando Objetos - JSON</h3>
+			<div v-for="contact in contacts">
+				{{contact}}
+			</div>
+
+			<hr>
+
+			<h3>Mostrando Lista de Objetos - JSON</h3>
+			<div>
+				{{contacts}}
+			</div>
+
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

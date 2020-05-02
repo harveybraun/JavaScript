@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Exemplo - Vue.JS</title>
+		<style type="text/css">
+			body {
+				margin-bottom: 15%;
+				margin-left: 2%;
+				margin-right: 2%;
+			}
+			hr {
+				margin-top: 2%;
+				margin-bottom: 2%;
+			}
+			h1, h2 {
+				font-family: Verdana;
+				font-weight: normal;
+			}
+			h1 {
+				font-size: 23px;
+				text-align: center;
+			}
+			h2 {
+				font-size: 19px;
+			}
+			select, option {
+				width: 200px;
+				height: 26px;
+				font-weight: bold;
+				font-family: Courier;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Exemplo VueJS</h1>
+
+			<hr>
+
+			<h2>Meses</h2>
+
+			<form name="add">
+				<select>
+					<option value="month" v-for="month in months">{{month}}</option>
+				</select>
+			</form>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

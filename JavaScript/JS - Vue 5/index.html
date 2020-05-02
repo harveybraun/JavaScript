@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Exemplo - Vue.JS</title>
+		<style type="text/css">
+			.list {
+				background-color: #faee88;
+				font-family: Courier;
+				font-size: 16px;
+				margin: 4px 2% 4px 2%;
+				padding: 4px 2% 4px 2%;
+			}
+			hr {
+				margin-top: 2%;
+				margin-bottom: 2%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Exemplo VueJS</h1>
+
+			<h2>Linguagens</h2>
+
+			<ul>
+				<li v-for="language in languages">{{language}}</li>
+			</ul>
+
+			<hr>
+
+			<div class="list" v-for="language in languages">
+				{{language}}
+			</div>
+
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

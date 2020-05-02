@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Pagina</title>
+		<style type="text/css">
+			body {
+				margin-bottom: 30%;
+			}
+			h1 {
+				background-color: #decd9a;
+				font-family: Verdana;
+				font-size: 19px;
+				border-color: #121209;
+				border: 5px;
+				padding: 5px;
+				text-align: center;
+				font-weight: normal;
+				letter-spacing: 1px;
+			}
+			.texto {
+				letter-spacing: 0.5px;
+			}
+			p {
+				margin: 1% 2% 1% 2%; /*Top, Right, Bottom, Left*/
+				text-indent: 25px;
+				text-align: justify;
+			}
+			button {
+				width: 200px;
+				height: 26px;
+				margin: 2% 2% 2% 2%;
+			}
+			.conjunto {
+				text-align: center;
+			}
+			#respostaCalculadora {
+				font-family: Courier;
+				font-size: 17px;
+				color: #151515;
+			}
+			.areaCalculadora {
+				margin-bottom: : 15%;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			var mensagem = "Seja Bem Vindo!";
+			console.log("Nome no Console: "+mensagem);
+			alert("Mensagem: "+mensagem);
+		</script>
+
+	</head>
+	<body>
+		<h1 id="titulo">Titulo</h1>
+
+		<div class="texto">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+
+		<p id="parte">
+			Teste de Parte
+		</p>
+
+		<div class="conjunto">
+			<button onclick="alterarTitulo()">Alterar Titulo</button>
+			<button onclick="enviarMensagem()">Enviar Mensagem</button>
+			<button onclick="alterarAlinhamento()">Alterar Alinhamento</button>
+			<button onclick="verData()">Ver Data</button>
+		</div>
+
+		<hr>
+		
+		<div class="areaCalculadora">
+			<button onclick="calculadora()">Calculadora</button>
+			<div id="respostaCalculadora"></div>
+		</div>
+
+		<script type="text/javascript">
+			console.log("Teste de Carregamento");
+
+			function alterarTitulo() {
+				document.getElementById("titulo").style.color = "#aa5523";
+			}
+
+			function enviarMensagem() {
+				alert("Olá!\n\n\n");
+			}
+
+			function alterarAlinhamento() {
+				var alinhamento = Number(prompt("1 - Esquerda\n2 - Direita\n3 - Centro"));
+				if (alinhamento == 1) {
+					document.getElementById("titulo").style.textAlign = "left";
+				} else if (alinhamento == 2) {
+					document.getElementById("titulo").style.textAlign = "right";
+				} else {
+					document.getElementById("titulo").style.textAlign = "center";
+				}
+			}
+
+			function verData() {
+				alert(Date());
+			}
+
+			function calculadora() {
+				var valor1 = Number(prompt("Calculadora\n\nInforme o Primeiro Valor"));
+				var valor2 = Number(prompt("Calculadora\n\nInforme o Segundo Valor"));
+				var escolha = Number(prompt("Calculadora\n\n1 - Somar\n2 - Subtrair\n3 - Multiplicar\n4 - Dividir\n\nInforme a Operação"));
+				var resultado;
+				var resposta = valor1;
+				if (escolha == 1) {
+					resposta += " + " + valor2 + " = " + Number(valor1 + valor2);
+				} else if (escolha == 2) {
+					resposta += " - " + valor2 + " = " + Number(valor1 - valor2);
+				} else if (escolha == 3) {
+					resposta += " * " + valor2 + " = " + Number(valor1 * valor2);
+				} else if (escolha == 4) {
+					resposta += " / " + valor2 + " = ";
+					if (valor2 == 0) {
+						resposta += "Nulo"
+					} else {
+						resposta += Number(valor1 / valor2);
+					}
+					//resposta += " / " + valor2 + " = " + Number(valor1 / valor2);
+				} else {
+					resposta = "Escolha Invalida";
+				}
+				document.getElementById("respostaCalculadora").innerHTML = resposta;
+			}
+
+		</script>
+
+	</body>
+</html>

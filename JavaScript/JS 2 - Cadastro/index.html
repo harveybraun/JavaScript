@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Cadastro</title>
+		<style type="text/css">
+			h1 {
+				font-family: Verdana, Arial;
+				font-size: 19px;
+				font-weight: normal;
+				text-align: center;
+			}
+			hr {
+				margin-top: 1%;
+				margin-bottom: 2%;
+			}
+			.geral {
+				margin: 0 2% 0 2%;
+			}
+			.botao {
+				margin-top: 1%;
+			}
+			input {
+				width: 400px;
+			}
+			button {
+				width: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Cadastro</h1>
+
+		<hr>
+
+		<div class="geral">
+
+			<form name="cadastrocontrato">
+				<div>
+					<input type="text" id="name" placeholder="Informe o Nome">
+				</div>
+
+				<div>
+					<input type="text" id="telephone" placeholder="Informe o Telefone">
+				</div>
+
+				<div>
+					<input type="email" id="email" placeholder="Informe o Email">
+				</div>
+
+				<div>
+					<input type="text" id="age" placeholder="Informe a Idade">
+				</div>
+
+				<div class="botao">
+					<button onClick="enviar()">Cadastrar</button>
+				</div>
+			</form>
+
+		</div>
+
+		<script type="text/javascript">
+			function enviar() {
+				var name = document.getElementById("name").value;
+				var telephone = document.getElementById("telephone").value;
+				var email = document.getElementById("email").value;
+				var age = document.getElementById("age").value;
+
+				var ageInMonths = age * 12;
+
+				var contact = {} // Significa Objeto
+				contact.name = name;
+				contact.telephone = telephone;
+				contact.email = email;
+				contact.age = age;
+				contact.calculateAgeInMonths = function x() {
+					return contact.age * 12;
+				};
+
+				alert("Variaveis\n"
+					+ "\nNome: " + name
+					+ "\n\nTelefone: " + telephone
+					+ "\n\nEmail: " + email
+					+ "\n\nIdade: " + age
+					+ "\n\nIdade Em Meses: " + ageInMonths + "\n\n");
+
+				alert("Objetos\n"
+					+ "\nNome: " + contact.name
+					+ "\n\nTelefone: " + contact.telephone
+					+ "\n\nEmail: " + contact.email
+					+ "\n\nIdade: " + contact.age
+					+ "\n\nIdade Em Meses: " + contact.calculateAgeInMonths() + "\n\n");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Exemplo - Vue.JS</title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>Exemplo VueJS</h1>
+
+			<h2>{{name}}</h2>
+			<h3 v-show="status">Aluno Matriculado e Ativo</h3>
+			<h3 v-show="!status">Aluno Inativo</h3>
+
+			<p>Nota 1: {{gradle1}}</p>
+			<p>Nota 2: {{gradle2}}</p>
+
+			<p>Media: {{calculateAverage}}</p>
+
+			<p>Conceito:
+				<span v-if="calculateAverage>=9">A</span>
+				<span v-else-if="calculateAverage>=8">B</span>
+				<span v-else-if="calculateAverage>=6">C</span>
+				<span v-else="calculateAverage>=0">D</span>
+			</p>
+
+			<p>Resultado:
+				<span v-if="calculateAverage>=6">Aprovado</span>
+				<span v-else="calculateAverage<6">Reprovado</span>
+			</p>
+
+			<!--
+			<button v-on:click="add">Adicionar Quantidade</button>
+			<button v-on:click="rem" v-show="quantity>0">Remover Quantidade</button>
+			-->
+
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
